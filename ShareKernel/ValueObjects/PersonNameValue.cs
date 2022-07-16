@@ -17,7 +17,7 @@ namespace ShareKernel.ValueObjects
             CheckRule(new StringNotNullOrEmptyRule(name));
             if(name.Length > 500)
             {
-                throw new BussinessRuleValidationException("PersonName can't be more than 500 characters");
+                throw new BussinessRuleValidationException("el nombre de la persoanl debe ser menor a 500 caracteres");
             }
             Name = name;
         }

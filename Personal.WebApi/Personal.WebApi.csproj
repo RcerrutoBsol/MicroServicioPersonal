@@ -2,10 +2,39 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>8191a4cc-0233-412c-89bd-1b45e2856a21</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ComposeBuildPersonal\**" />
+    <Content Remove="ComposeBuildPersonal\**" />
+    <EmbeddedResource Remove="ComposeBuildPersonal\**" />
+    <None Remove="ComposeBuildPersonal\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="docker-compose.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="docker-compose.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.msbuild" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Eshva.DockerCompose" Version="0.2.0" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Personal.Application\Personal.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -40,6 +40,13 @@ namespace Personal.Domain.Model.Personal
         {
            AddDomainEvent(new PersonalCreado(Id,NombreCompleto,Tipo,Tripulacion));
         }
+        public void ConsolidarPersonal()
+        {
+            var evento = new PersonalCreado(Id, NombreCompleto, Tipo, Tripulacion);
+            AddDomainEvent(evento);
+        }
+
+       
     }
   
 }

@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  personal.webapi:
+    image: ${DOCKER_REGISTRY-}personalwebapi
+    build:
+      context: .
+      dockerfile: Personal.WebApi/Dockerfile

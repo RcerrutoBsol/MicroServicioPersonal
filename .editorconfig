@@ -1,0 +1,10 @@
+root = true
+
+#todos los archivos que terminen en  .cs
+[*.cs]
+
+#utilizara el tabulador el caracter  \t
+indent_style = tab 
+
+#usara espacios separador con 2 espacio
+indent_size = 2
